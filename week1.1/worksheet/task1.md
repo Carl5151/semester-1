@@ -13,8 +13,8 @@ You can complete this task on the worksheet pdf if you prefer.
 |     pwd                     | shows the current location of the terminal |
 |     ls                      | lists all the contents within the current directory |
 |     cd directory_name       | opens the entered named directory |
-|     cd ..                   |  |
-|     cd -                    |  |
+|     cd ..                   | closes a directory |
+|     cd -                    | returns to previous directory |
 |     mkdir directory_name    | creates a new directory naming it with the entered name |
 |     touch filename          | creates a new file naming it with the entered name |
 |     git status              |  |
