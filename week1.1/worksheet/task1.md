@@ -20,6 +20,6 @@ You can complete this task on the worksheet pdf if you prefer.
 |     git status              | checks for any new content that needs to be committed |
 |     git add -A              | tells that you have work you want to save and want to save all of it |
 |     git commit -m ""        | saves all changes done as one save point with a message of changes |
-|     git push                | stores the changes onto the remote branch |
-|     git pull                | retrieves any changes made in the remote branch |
+|     git push                | stores the changes from your local onto the remote branch |
+|     git pull                | retrieves any changes made from the remote branch into your local branch |
 
