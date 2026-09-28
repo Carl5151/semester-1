@@ -2,5 +2,6 @@
 
 About Me
 
-I'm from the Phillipines
+I'm Fillipino
+
 Good to see you
