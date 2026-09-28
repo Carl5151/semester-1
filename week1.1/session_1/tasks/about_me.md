@@ -2,6 +2,4 @@
 
 About Me
 
-I'm Fillipino
-
-Good to see you
+I'm from Stevenage, Hertfordshire
