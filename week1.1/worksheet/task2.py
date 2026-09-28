@@ -25,4 +25,4 @@ if valid:
   
   # Calculate the total amount of money including interest (0.8% of the final annual amount) they will have saved in a year.
   # print this out in the format £X.XX (to two decimal places).
-  print(f"Including interest, you will have saved £{round(saved *1.008, 2)} by the end of the year")
+  print(f"Including interest, you will have saved £{saved *1.008:.2f} by the end of the year")
