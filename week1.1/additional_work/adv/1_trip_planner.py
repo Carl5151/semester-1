@@ -14,3 +14,6 @@ time_hours_input = input("How many hours will the journey take? ")
 # TODO: calculate the average speed in miles per hour
 # TODO: print a summary message using an f-string
 # Extension: add validation for zero or negative values
+
+average_speed = int(distance_miles_input) / int(time_hours_input)
+print("Destination -", destination, "\nAverage Speed -", average_speed)
