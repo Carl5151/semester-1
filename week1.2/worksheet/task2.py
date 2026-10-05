@@ -13,4 +13,4 @@ else:
     print('Mean =', str(sum(numbers) / len(numbers)))
     numbers.sort()
     print('Median =', str(numbers[len(numbers)  // 2]))
-    
+
