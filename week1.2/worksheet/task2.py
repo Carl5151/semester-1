@@ -16,5 +16,4 @@ else:
         print('Median =', str(numbers[len(numbers)  // 2]))
     else:
         median = (numbers[len(numbers)  // 2] + (numbers[(len(numbers)  // 2) - 1])) / 2
-        print(f'Median of {numbers} =', median)
-
+        print(f'Median =', median)
