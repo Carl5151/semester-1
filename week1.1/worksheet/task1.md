@@ -17,9 +17,9 @@ You can complete this task on the worksheet pdf if you prefer.
 |     cd -                    | returns to previous directory |
 |     mkdir directory_name    | creates a new directory naming it with the entered name |
 |     touch filename          | creates a new file naming it with the entered name |
-|     git status              |  |
+|     git status              | Provides information of current directory |
 |     git add -A              | tells that you have work you want to save and want to save all of it |
 |     git commit -m ""        | saves all changes done as one save point with a message of changes |
-|     git push                | stores the changes onto the Git servers |
-|     git pull                |  |
+|     git push                | Stores the changes from local branch into the remote branch |
+|     git pull                | Retrieves data from remote repository and loads into current branch |
 
