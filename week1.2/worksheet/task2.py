@@ -12,8 +12,9 @@ else:
     print('Maximum =', str(max(numbers)))
     print('Mean =', str(sum(numbers) / len(numbers)))
     numbers.sort()
-    if len(numbers) == 1:
+    if len(numbers) % 2 == 1:
         print('Median =', str(numbers[len(numbers)  // 2]))
     else:
-        print(f'Median of {numbers} should be', str(numbers[len(numbers)  // 2]))
+        median = (numbers[len(numbers)  // 2] + (numbers[(len(numbers)  // 2) - 1])) // 2
+        print(f'Median of {numbers} should be', median)
 
