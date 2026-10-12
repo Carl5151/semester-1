@@ -12,6 +12,15 @@ rivers = {
 for c, r in rivers.items():
     print(c, r)
 
+for key in rivers:
+    print(key)
+
+for key in rivers:
+    print(rivers.get(key))
+
+# task 2 alternative
+# for key in rivers:
+#     print(rivers[key])
 
 # create 2 further for loops to iterate: 1. just through the keys, 2. just through the values
 # hint: we looked at built in function for dicts last session
