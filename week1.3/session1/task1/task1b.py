@@ -6,7 +6,8 @@ fruit = ['apple','pear','banana','orange']
 while fruit:
 	print(fruit.pop())
 
-
 # Why does this work?
+# Conditioned to print values within the fruit list until none is left
 
 # What features of Python does it rely on?
+# pop() method and looping
