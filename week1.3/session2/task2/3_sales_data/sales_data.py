@@ -9,6 +9,36 @@
 #   - the widget which has been sold the most
 # and print these out in a nice, human-readable format
 
+highest_sale = 0
+sum = 0
+count = 0
+most_sold_widget = ''
+most_sold_amount = 0
+iteration = 0
+
+# read file
+with open("sales.csv", "r") as f:
+    # each line
+    for line in f:
+        if iteration == 0:
+            iteration += 1
+        else:
+            # track sales amount and count
+            sum += int(line.split(",")[2])
+            count += 1
+            # check highest sale amount
+            if int(line.split(",")[2]) > highest_sale:
+                highest_sale = int(line.split(",")[2])
+            # check most sold widget
+            if int(line.split(",")[3]) > most_sold_amount:
+                most_sold_widget = line.split(",")[1]
+                most_sold_amount = int(line.split(",")[3])
+
+average = sum / count
+
+print(f"Highest Sale: £{highest_sale}")
+print(f"Average Sale: £{average}")
+print(f"Most Sold Widget: {most_sold_widget}")
 
 # additional: you can calculate other sales statistics such as:
 # - total sales for each region
