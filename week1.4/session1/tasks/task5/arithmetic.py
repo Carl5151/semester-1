@@ -39,18 +39,23 @@ def run_program():
     operation = int(input("Enter your choice (1-4): "))
 
     match operation:
+        # outputs sum of two input numbers
         case 1:
-            result = None    # complete this line of code
+            result = addition(num1, num2)    # complete this line of code
             print(f"The result of addition is: {result}")
+        # outputs subtraction of num1 by num2
         case 2:
-            result = None    # complete this line of code
+            result = subtraction(num1, num2)    # complete this line of code
             print(f"The result of subtraction is: {result}")
+        # outputs multiplication of two input numbers
         case 3:
-            result = None   # complete this line of code
+            result = multiplication(num1, num2)   # complete this line of code
             print(f"The result of multiplication is: {result}")
+        # outputs division of num1 by num2
         case 4:
-            result = None    # complete this line of code
+            result = division(num1, num2)    # complete this line of code
             print(f"The result of division is: {result}")
+        # outputs error if invalid option
         case _:
             print("Undefined operation")
 
