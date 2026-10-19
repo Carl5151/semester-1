@@ -11,9 +11,12 @@
 # function implementation
 
 def mystery_func(string):
+    """Returns the number of upper and lower case letters in 
+    string"""
     upper = 0
     lower = 0
 
+    # check if each character in string is upper/lower case
     for ch in string:
         if ch.isupper():
             upper += 1
@@ -21,9 +24,7 @@ def mystery_func(string):
             lower += 1
     return (upper, lower)
 
-
 # testing
-
 print(mystery_func("abc"))
 print(mystery_func("The quick Brown Fox!"))
 print(mystery_func("012345"))
@@ -34,5 +35,5 @@ print(mystery_func("ABC"))
 # Uncomment the lines of code one by one and run the program
 # to see if you are right?
 
-# print(mystery_func("X"))
-# print(mystery_func("[2, 3]"))
+print(mystery_func("X")) # (1, 0)
+print(mystery_func("[2, 3]")) # (0, 0)
