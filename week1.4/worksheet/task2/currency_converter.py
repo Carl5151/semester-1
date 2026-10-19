@@ -23,7 +23,7 @@ def currency_converter(amount, from_currency, to_currency):
     
     return new_amount
 
-amount = float(input("Enter amount to convert: "))
+amount = int(input("Enter amount to convert: "))
 from_currency = input("Enter the currency type you want to convert from: ").upper()
 to_currency = input("Enter the currency type you want to convert to: ").upper()
 
