@@ -27,7 +27,12 @@ def celsius_to_fahrenheit(celsius):
 
 
 # test the functions
-
 celsius = float(input("Enter temperature in Celsius: "))
 
 # Complete the rest of the code here
+# checks if input temperature is valid
+# outputs fahrenheit equivilent if valid or error otherwise
+if valid_temperature(celsius):
+    print(f"{celsius} degress celsius in fahrenheit: {celsius_to_fahrenheit(celsius)}")
+else:
+    print("Invalid temperature")
