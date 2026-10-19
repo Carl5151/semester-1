@@ -24,10 +24,11 @@ def currency_converter(amount, from_currency, to_currency):
     return new_amount
 
 amount = float(input("Enter amount to convert: "))
-from_currency = input("Enter the currency type you want to convert from: ")
-to_currency = input("Enter the currency type you want to convert to: ")
+from_currency = input("Enter the currency type you want to convert from: ").upper()
+to_currency = input("Enter the currency type you want to convert to: ").upper()
 
-print(f"Conversion: {currency_converter(amount, from_currency, to_currency)}")
+conversion = currency_converter(amount, from_currency, to_currency)
+print(f"Conversion: {conversion}")
 
 # Submit only this file currency_converter.py with the completed function.
 
