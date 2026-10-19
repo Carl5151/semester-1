@@ -19,8 +19,15 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
+    new_amount = amount * conversion_rate[from_currency][to_currency]
+    
+    return new_amount
 
-    return None
+amount = float(input("Enter amount to convert: "))
+from_currency = input("Enter the currency type you want to convert from: ")
+to_currency = input("Enter the currency type you want to convert to: ")
+
+print(f"Conversion: {currency_converter(amount, from_currency, to_currency)}")
 
 # Submit only this file currency_converter.py with the completed function.
 
