@@ -18,6 +18,16 @@ def odd_even(lstIntegers):
     """
 
     # Complete your code here
+    odds = 0
+    evens = 0
+    # check odd or even
+    for num in lstIntegers:
+        if num % 2 != 0:
+            odds += 1
+        else:
+            evens += 1
+
+    return [odds, evens]
 
 
 # Check if correct output is produced
