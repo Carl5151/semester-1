@@ -19,9 +19,11 @@ def digits_sum(number):
     """
     # complete your code here
     # base case
-
+    if len(str(number)) == 1:
+        return(number)
     # recursive case
-
+    else:
+        return(int(str(number)[0]) + digits_sum(int(str(number)[1:])))
 
 # check if correct output is produced
 print(digits_sum(987))  # Output: 24
