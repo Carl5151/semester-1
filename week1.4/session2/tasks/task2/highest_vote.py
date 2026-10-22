@@ -16,11 +16,28 @@ def most_frequent_string(votes):
         and int is the count of its occurences
         - None, None: if votes is empty.
     """
-
     # Your task is to complete the body of the function based on the details in the docstring.
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types
-
+    if len(votes) > 0:
+        voted = []
+        checked = []
+        for vote in votes:
+            # check if vote taken into account
+            if vote not in checked:
+                count = votes.count(vote)
+                voted.append([vote, count])
+                checked.append(vote)
+        # check most common vote
+        most = ''
+        count = 0
+        for vote in voted:
+            if vote[1] > count:
+                most = vote[0]
+                count = vote[1]
+        return (most, count)
+    else:
+        return (None, None)
 
 fruit = ['date', 'apple', 'cherry', 'date', 'apple', 'apple', 'elderberry',
          'date', 'elderberry', 'elderberry', 'date', 'banana']
