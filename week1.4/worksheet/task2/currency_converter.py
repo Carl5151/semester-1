@@ -19,8 +19,12 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
-    new_amount = amount * conversion_rate[from_currency][to_currency]
-    
+    try:
+        new_amount = amount * conversion_rate[from_currency][to_currency]
+        if new_amount < 0:
+            raise ValueError:
+    except ValueError:
+        return 0.0
     return new_amount
 
 # amount = int(input("Enter amount to convert: "))
