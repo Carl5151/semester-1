@@ -1,7 +1,9 @@
 # Another bad class implementation
 
 # What does the runtime error mean?
+# Error that occurs whilst running the code/ being executed
 # How do we fix the code?
+# Adding self to the constructor and attributes
 
 class Point:
     """
@@ -12,8 +14,8 @@ class Point:
         """
         Creates a Point, given x & y coordinates.
         """
-        x = x_coordinate
-        y = y_coordinate
+        self.x = x_coordinate
+        self.y = y_coordinate
 
 
 p = Point(1.5, 2.0)

@@ -1,14 +1,14 @@
 
 # PGM functions that we write
 
-def readPGM( filename ):
+def readPGM(filename):
     ''' 
     Read a named PGM file and store the data in a tuple.
     Input: filename string
     Output: tuple of PGM image data
     '''
 
-    with open(filename,"r") as f:    # read in the file
+    with open(filename, "r") as f:    # read in the file
         data = f.readlines()
         
     data = [line.strip().split() for line in data[1:]] # clean the space-separated data, skip the first line
