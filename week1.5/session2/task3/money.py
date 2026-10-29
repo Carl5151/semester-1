@@ -39,7 +39,9 @@ class Money:
         Adds this Money to another Money, returning the total.
         """
         # Add code here to check that parameter 'other' is a Money object,
+        if not isinstance(other, Money):
+            raise TypeError("other should be a Money object")
         # add self to other, then return the sum as a new Money object
         # (see README for hints and tips)
-        sum = float(self.__str__()[1:]) + float(other.__str__()[1:])
-        return f"£{sum}"
+        sum = str(float(self.__str__()[1:]) + float(other.__str__()[1:]))
+        return Money(int(sum[:2]), int(sum[3:]))

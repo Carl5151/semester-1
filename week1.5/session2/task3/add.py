@@ -8,4 +8,5 @@ print(m1.__str__())
 print(m2.__str__())
 
 # then adds them together and prints their sum
-print(m1.__add__(m2))
+m3 = m1.__add__(m2)
+print(m3.__str__())
