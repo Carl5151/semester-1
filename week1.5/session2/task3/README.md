@@ -28,11 +28,11 @@ and make some invalid attempts to create a `Money` object:
 
 ```python
 >>> from money import Money
->>> Point(1.0, 50)
->>> Point(1, "fifty")
->>> Point(-1, 50)
->>> Point(1, -50)
->>> Point(1, 100)
+>>> Money(1.0, 50)
+>>> Money(1, "fifty")
+>>> Money(-1, 50)
+>>> Money(1, -50)
+>>> Money(1, 100)
 ```
 
 Each of the above should fail with an exception.
