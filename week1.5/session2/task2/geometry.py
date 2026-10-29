@@ -19,6 +19,12 @@ class Point:
         self.x = x
         self.y = y
 
+    def __str__(self):
+        """
+        Returns string representation of this Point.
+        """
+        return f"({self.x},{self.y})"
+
     def distance(self):
         """
         Returns distance of this Point from the origin.
@@ -49,6 +55,12 @@ class Circle:
         """
         self.radius = radius
         self.centre = centre
+
+    def __str__(self):
+        """
+        Returns string representation of this Point.
+        """
+        return f"({self.radius},{self.centre})"    
 
     def area(self):
         """
