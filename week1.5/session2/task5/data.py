@@ -18,14 +18,19 @@ class Dataset:
     def load_data(self, filename):
         """
         Loads data from the specified file into this Dataset.
-
         Any existing data will be deleted.
         """
+        self.data = []
+        with open(filename, "r") as file:
+            for line in file:
+                data = line.strip().split()
+                self.data.append(data)
 
     def __len__(self):
         """
         Returns the size of this Dataset.
         """
+        
 
     def __getitem__(self, index):
         """
