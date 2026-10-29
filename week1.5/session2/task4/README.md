@@ -7,11 +7,11 @@ All you need to do in this file is add an implementation of `__contains__()`
 to `Circle`.
 
 Your `__contains__()` method should have a parameter to represent the object
-that appears to the right of the `in` operator. You can assume that this
+that appears to the left of the `in` operator. You can assume that this
 is always a `Point` object.
 
 The ever-present `self` parameter represents the `Circle` object that
-appears to the left of the `in` operator.
+appears to the right of the `in` operator.
 
 Your implementation will need to return `True` if the supplied point is inside
 the circle. To determine this, simply test whether the distance from the
