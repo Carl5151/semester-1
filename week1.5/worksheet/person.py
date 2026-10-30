@@ -3,11 +3,12 @@
 from datetime import date
 
 class Person:
-    """
-    A Person, with a name and a date of birth.
-    """
     # Write a constructor here to create and initialize name and
     # birth fields (see README.md for further details)
+    """
+    A constructor for a Person object
+    with a name and a date of birth.
+    """
     def __init__(self, name, dob):
             # check if name is a string
             if not isinstance(name, str):
@@ -27,9 +28,9 @@ class Person:
         """
         Returns a person's intitials
         """
-        initials = ''
+        initials = self.name[0].upper()
         for char in range(len(self.name)):
-            if char == 0 or self.name[char] == " ":
+            if self.name[char] == " ":
                 initials += self.name[char + 1].upper()
 
         return initials
@@ -45,3 +46,6 @@ class Person:
 
     # (see README.md for further details)
 
+# person = Person('Carl Guevan', date(2026, 10, 30))
+# print(date.today())
+# print(person.is_birthday())
