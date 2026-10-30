@@ -3,25 +3,27 @@
 from datetime import date
 
 class Person:
+    """
+    A Person object with a name and a date of birth.
+    """
     # Write a constructor here to create and initialize name and
     # birth fields (see README.md for further details)
-    """
-    A constructor for a Person object
-    with a name and a date of birth.
-    """
     def __init__(self, name, dob):
-            # check if name is a string
-            if not isinstance(name, str):
-                raise TypeError("Invalid name data type")
-            # check if name is an empty string
-            if name == '':
-                raise ValueError("Name cannot be an empty string")
-            # check if date of birth is a date
-            elif not isinstance(dob, date):
-                raise TypeError("Invalid dob data type")
+        """
+        Creates a Person, given values for name and date of birth.
+        """
+        # check if name is a string
+        if not isinstance(name, str):
+            raise TypeError("Invalid name data type")
+        # check if name is an empty string
+        if name == '':
+            raise ValueError("Name cannot be an empty string")
+        # check if date of birth is a date
+        if not isinstance(dob, date):
+            raise TypeError("Invalid dob data type")
 
-            self.name = name
-            self.birth = dob
+        self.name = name
+        self.birth = dob
 
     # Implement methods initials() and is_birthday() here
     def initials(self):
