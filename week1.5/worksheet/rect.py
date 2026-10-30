@@ -10,21 +10,18 @@ class Rectangle:
         """
         # Add code here to check type and value of provided width & height,
         # raising appropriate exceptions if necessary (see README.md)
-        try:
-            # check if width/height are integer
-            if not isinstance(width, int) or  not isinstance(height, int):
-                raise TypeError
-            # check if width/height are greater than 0
-            elif width <= 0 or height <= 0:
-                raise ValueError
-            else:
-                # set attributes if valid arguements passed in
-                self.width = width
-                self.height = height
-        except TypeError:
-            print("Invalid width/height data type")
-        except ValueError:
-            print("Invalid width/height")
+
+        # check if width/height are integer
+        if not isinstance(width, int) or not isinstance(height, int):
+            raise TypeError("Invalid width/height data type")
+        # check if width/height are greater than 0
+        elif width <= 0 or height <= 0:
+            raise ValueError("Invalid width/height")
+        else:
+            # set attributes if valid arguements passed in
+            self.width = width
+            self.height = height
+
 
     # Implement methods is_square(), area() & perimeter() here
     def is_square(self):
