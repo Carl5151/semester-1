@@ -24,7 +24,28 @@ class Person:
         except ValueError:
             print("No name given")
 
+        self.name = name
+        self.dob = dob
+
     # Implement methods initials() and is_birthday() here
-    
+    def initials(self):
+        """
+        Returns a person's intitials
+        """
+        initials = ''
+        for char in range(len(self.name)):
+            if char == 0 or self.name[char] == " ":
+                initials += self.name[char + 1].upper()
+
+        return initials
+
+    def is_birthday(self):
+        """
+        Returns Boolean if it's a person's birthday today
+        """
+        if self.dob == date.today():
+            return True
+        else:
+             return False
 
     # (see README.md for further details)
