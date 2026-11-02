@@ -41,13 +41,13 @@ class Person:
         """
         Returns Boolean if it's a person's birthday today
         """
-        if self.birth == date.today():
+        if self.birth.day == date.today().day and self.birth.month == date.today().month:
             return True
         else:
              return False
 
     # (see README.md for further details)
 
-# person = Person('Carl Guevan', date(2026, 11, 2))
-# print(date.today())
-# print(person.is_birthday())
+person = Person('Carl Guevan', date(2000, 11, 2))
+print(date.today())
+print(person.is_birthday())
