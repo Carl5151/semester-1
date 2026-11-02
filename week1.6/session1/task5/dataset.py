@@ -36,6 +36,8 @@ class QuakeDataset:
         # Write code here to replace existing data with new earthquake data.
         # Use the value returned by the feed's reader() method as the
         # subject of a for loop.
+        for line in QuakeFeed.reader(self.feed):
+            print(line)
 
         # Keep in mind that the items obtained by this for loop will be
         # dictionaries. You will need to extract the required values from
@@ -47,6 +49,7 @@ class QuakeDataset:
         Returns the size of this dataset.
         """
         # Write code here that returns the number of quakes downloaded
+        return len(self.data)
 
     def __str__(self):
         """

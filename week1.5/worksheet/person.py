@@ -48,6 +48,6 @@ class Person:
 
     # (see README.md for further details)
 
-# person = Person('Carl Guevan', date(2026, 10, 30))
+# person = Person('Carl Guevan', date(2026, 11, 2))
 # print(date.today())
 # print(person.is_birthday())
