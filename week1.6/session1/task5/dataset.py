@@ -38,8 +38,13 @@ class QuakeDataset:
         # subject of a for loop.
         for q in QuakeFeed.reader(self.feed):
             time = q['time']
+            long = float(q['longitude'])
+            lat = float(q['latitude'])
+            depth = float(q['depth'])
+            mag = float(q['magnitude'])
+            quake = Quake(time, long, lat, depth, mag)
+            self.data.append(quake)
                     
-
         # Keep in mind that the items obtained by this for loop will be
         # dictionaries. You will need to extract the required values from
         # each dictionary and convert them into the required types before
