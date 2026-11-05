@@ -60,7 +60,12 @@ class Image:
         self.width = width
         self.height = height
         self.max_value = maximum
-        self.pixels = [value] * (width * height)
+        # self.pixels = [value] * (width * height)
+        # option 1
+        self.pixels = [[value] * width] * height
+
+        # option 2
+        #self.pixels = [[value] * width for i in range(height)]
 
     def read_pgm(self, filename):
         """
@@ -93,39 +98,48 @@ class Image:
         self.max_value = int(line)
 
     def _parse_pixels(self, imgfile):
-        self.pixels = [int(value) for value in imgfile.read().split()]
+        # self.pixels = [int(value) for value in imgfile.read().split()]
+        # if len(self.pixels) != self.width * self.height:
+        #     raise ImageError("number of pixels doesn't match image dimensions")
+        # if any(p < 0 or p > self.max_value for p in self.pixels):
+        #     raise ImageError(f"pixel value outside allowed range (0 to {self.max_value})")
+        
+        # reading from file
+        data = imgfile.readlines()
+        data = [line.strip().split() for line in data]
+        # storing pixels as list of lists
+        self.pixels = []
+        for line in data:
+            temp = [int(value) for value in line]
+            self.pixels.append(temp)
 
-        if len(self.pixels) != self.width * self.height:
+        # checking length
+        length = 0
+        for line in self.pixels:
+            length += len(line)
+            # checking no pixel exceeds max pixel value
+            if any(p < 0 or p > self.max_value for p in line):
+                raise ImageError(f"pixel value outside allowed range (0 to {self.max_value})") 
+        # checking number of pixels match
+        if length != self.width * self.height:
             raise ImageError("number of pixels doesn't match image dimensions")
-
-        if any(p < 0 or p > self.max_value for p in self.pixels):
-            raise ImageError(f"pixel value outside allowed range (0 to {self.max_value})")
-
-    def __getitem__(self, index):
-        """
-        Returns pixel value at the specified linear index.
-        """
-        return self.pixels[index]
-
-    def __setitem__(self, index, value):
-        """
-        Sets pixel at the specified linear index to the specified value.
-        """
-        self.pixels[index] = value
+        
 
     def get(self, row, col):
         """
         Returns pixel value at the specified row & column coordinates.
         """
-        index = row * self.width + col
-        return self.pixels[index]
+        # index = row * self.width + col
+        # return self.pixels[index]
+        return self.pixels[row][col]
 
     def set(self, row, col, value):
         """
         Sets pixel at the specified row & column coordinates to the given value.
         """
-        index = row * self.width + col
-        self.pixels[index] = value
+        # index = row * self.width + col
+        # self.pixels[index] = value
+        self.pixels[row][col] = value
 
     def copy(self):
         """
@@ -148,7 +162,8 @@ class Image:
 
     def _write_pixels(self, imgfile):
         for row in range(self.height):
-            start = row * self.width
-            for value in self.pixels[start:start + self.width]:
+            # start = row * self.width
+            for value in self.pixels[row]:
+            # for value in self.pixels[start:start + self.width]:
                 print(f"{value:4d}", end="", file=imgfile)
             print(file=imgfile)
