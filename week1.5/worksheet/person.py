@@ -48,6 +48,6 @@ class Person:
 
     # (see README.md for further details)
 
-person = Person('Carl Guevan', date(2000, 11, 2))
-print(date.today())
-print(person.is_birthday())
+# person = Person('Carl Guevan', date(2000, 11, 2))
+# print(date.today())
+# print(person.is_birthday())
