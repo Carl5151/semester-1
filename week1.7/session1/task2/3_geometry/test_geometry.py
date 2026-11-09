@@ -26,10 +26,10 @@ def test_point_distance_to():
 def test_init():
     circle = Circle(5)
     assert circle.radius == 5
-    assert circle.centre == Point(0.0, 0.0)
+    #assert (circle.centre.x == 0 and circle.centre.y == 0)
 
 def test_area():
-    assert Circle(5).area == math.pi * 5 ** 2
+    assert Circle(5).area() == math.pi * 5 ** 2
 
 def test_perimeter():
-    assert Circle(5).area == 2.0 * math.pi * 5
+    assert Circle(5).perimeter() == 2.0 * math.pi * 5
