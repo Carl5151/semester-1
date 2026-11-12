@@ -10,7 +10,6 @@ class MarkError(Exception):
     To be valid, a mark must be an integer in the range 0-100.
     """
 
-
 def read_marks(filename):
     """
     Given the name of a CSV file, reads student names and exam marks from
@@ -21,7 +20,7 @@ def read_marks(filename):
         infile.readline()  # skip column headings
         for line in infile:
             name, mark = line.strip().split(",")
-            data[name] = mark
+            data[name] = int(mark)
         return data
 
 
@@ -35,9 +34,11 @@ def grade(mark):
 
     MarkError is raised if the provided mark is not valid.
     """
+    if not isinstance(mark, int):
+        raise MarkError
     if 0 <= mark < 40:
         return "Fail"
-    elif 40 <= mark <= 70:
+    elif 40 <= mark < 70:
         return "Pass"
     elif 70 <= mark <= 100:
         return "Distinction"
