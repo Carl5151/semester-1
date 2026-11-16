@@ -25,7 +25,14 @@ def show_bar_chart_stars_per_manufacturer(data):
     '''
     Create a bar chart showing the average rating per manufacturer
     '''
-    pass
+    # sorting data to manufacturer and collecting averages
+    average_per_manufacturer = data.groupby("Brand").sum(numeric_only=True)
+    print(average_per_manufacturer)
+    average_per_manufacturer = average_per_manufacturer["Stars"]
+
+    # displaying bar chart
+    average_per_manufacturer.plot(kind="bar", color="#eff542", title="Average Rating Per Manufacturer")
+    plt.show()
 
 def show_bar_chart_stars_per_country(data):
     '''
@@ -38,7 +45,7 @@ def find_best_per_country(data, country):
     Find and return the index of the row with the highest rating per country.
     If there are two with equal rating, you can return either.
     '''
-    pass
+    highest = data
 
 def find_worst_per_country(data, country):
     '''
@@ -85,8 +92,8 @@ def menu():
     ''' Displays menu and allows user to enter choice to be returned to main - if you add more, remember to add them to the 'while choice not in' line! '''
     print("~ ramen rating database ~")
     print("1 - See distribution of scores")
-    print("2 - see average score per country")
-    print("3 - see average score per manufacturer")
+    print("2 - see average score per manufacturer")
+    print("3 - see average score per country")
     print("4 - Get a breakdown of a specific country")
     print("5 - See the top ten ramens")
     print("6 - See a random Ramen")

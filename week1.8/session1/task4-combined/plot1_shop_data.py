@@ -14,20 +14,22 @@ shop_data = pd.read_csv("shop_sales_data_one_month.csv")
 shop_data['Date'] = pd.to_datetime(shop_data['Date'])
 
 # Step 1: check that the data looks sensible - you should do this often!:
-print(shop_data.head())
+print("Head:")
+print(shop_data.head()) # Shows first 5 rows in default
 
 # Step 2: add a column 'Total_Price' which is equal to Units_Sold * Unit_Price
-
+print("Adding Column:")
 shop_data["Total_Price"] = shop_data["Units_Sold"] * shop_data["Unit_Price"]
+print(shop_data.head()) # Shows first 5 rows in default
 
-# Step 3: In order to make our first graph, we want to group everything together by Dat
+# Step 3: In order to make our first graph, we want to group everything together by Date
 
 # we need to group by the Date - this joins all the rows with the same date together
 # .sum() tells Pandas to add together all the values - this means we can easily get the sales/day.
 # We use the kwarg numeric_only=True to make sure we don't get errors.
+print("Grouping By Date:")
 total_daily_sales = shop_data.groupby("Date").sum(numeric_only=True)
 print(total_daily_sales)
-
 
 # Then you can filter out the columns you want to put into a graph - we will show sales per day.
 
@@ -36,6 +38,7 @@ print(total_daily_sales)
 total_daily_sales = total_daily_sales["Total_Price"]
 
 # I like to check I have the right data in my table so I usually print it here before I plot the graph
+print("Total Price:")
 print(total_daily_sales)
 
 # and once you're happy that you have a dataframe with the right stuff in it, you can plot it:
@@ -62,6 +65,10 @@ plt.show()
 # To practice, here are some tasks to use - remember, the original data is named shop_data
 
 # Create a pie chart to show sales per product
+# sorting by Product and getting total price column 
+sales_per_product = shop_data.groupby("Product").sum(numeric_only=True)
+sales_per_product = sales_per_product["Total_Price"]
 
-
-
+# Displaying graph
+sales_per_product.plot(kind="pie", colors=["#E57A44", "#8AB9B5", "#F5E6E8", "#481620"])
+plt.show()
