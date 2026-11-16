@@ -6,6 +6,7 @@ y = [ k*k for k in x ]      # create a simple function y=x^2
 
 plt.plot(x,y)  # create a 2d plot
 
+# axis labeling
 plt.xlabel('x')
 plt.ylabel('y=x^2')  # annotate
 
