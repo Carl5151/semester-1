@@ -1,4 +1,5 @@
 import pandas
+import statistics
 
 data = pandas.read_csv("lifestyle_data.csv")
 
@@ -10,16 +11,35 @@ data = pandas.read_csv("lifestyle_data.csv")
 # - Leave your code under the comments.
 
 # Find the total number of students
+students = len(data)
+print(f"Total Number of Students: {len(data)}")
 
 # Find the mean average GPA of the students
+sum = 0
+for val in data["GPA"]:
+    sum += val
+average = round(sum / students, 2)
+print(f"Average GPA: {average}")
+
+# option 2
+print(data["GPA"].mean())
 
 # Find the standard deviation of how much sleep students get per day
+sd = statistics.stdev(data["Sleep_Hours_Per_Day"])
+print(f"Students' Sleep Per Day Standard Deviation: {sd}")
+
+# option 2
+print(data["Sleep_Hours_Per_Day"].std())
 
 # Find the maximum amount of study hours per day
+print(f"Max Study Hours Per Day: {data["Study_Hours_Per_Day"].max()}")
 
 # Sort the students by social hours per day ascending (lowest -> highest)
+print(f"Students Sorted by Social Hours Per Day in Ascending Order:")
+print(data["Social_Hours_Per_Day"].sort_values())
 
 # Add a column 'Total_hours' which adds together all the Hours_Per_Day columns into one
+
 
 # Filter all students with a 'high' stress level, and all the students with a 'low' stress level.
 # Can you work out whether having a higher stress level leads to a higher GPA?
