@@ -3,7 +3,7 @@ import httpx
 import pandas as pd
 import matplotlib.pyplot as plt
 
-api_key="U6KXJTZC2E8VGH39PD7UMG4BZ"   # your API key
+api_key="5FPLFSPHV4N845SEANMLALCZU"   # your API key
 
 city="Leeds"     # city location
 country="UK"     # country location
@@ -21,31 +21,39 @@ response = httpx.get(url)
 
 # status code (should be checked)
 print(response.status_code)
+if response.status_code == 200: # successful request code
 
-# json data
-data = response.json()
+    # json data
+    data = response.json()
 
-# raw data output
-print(data)
+    # raw data output
+    print(data)
 
-# extract the temperature data as lists from the JSON dictionary
-temp_data = data['days']
+    # extract the temperature data as lists from the JSON dictionary
+    temp_data = data['days']
 
-print(temp_data)
+    print(temp_data)
 
-# use pandas to convert data to  dataframe
+    # use pandas to convert data to  dataframe
+    df = pd.DataFrame(temp_data)
+    print(df)
 
-df = pd.DataFrame(temp_data)
+    # using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
+    df.plot()
 
-# using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
+    # annotate the graph with axis labels
+    plt.xlabel('Day')
+    plt.ylabel('Temperature, Farenheit (F)')
 
-df.plot()
+    plt.show() # display graph
 
-plt.show()
+    # note that temperature is in Farenheit (F)
+    # convert to Celcius before plotting 
+    df['tempmax'] = (df['tempmax'] - 32) * (5/9)
+    df['tempmin'] = (df['tempmin'] - 32) * (5/9)
+    df['temp'] = (df['temp'] - 32) * (5/9)
 
-# annotate the graph with axis labels
-
-# note that temperature is in Farenheit (F)
-# convert to Celcius before plotting 
-
-# using the documentation explore other data, eg. rainfall  
+    # using the documentation explore other data, eg. rainfall  
+    print(df)
+    df.plot()
+    plt.show() # display graph

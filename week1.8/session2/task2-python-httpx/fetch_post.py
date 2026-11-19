@@ -12,7 +12,7 @@ response = httpx.get(url)   # httpx object, get() method, returns a response obj
 
 # checking if successful
 print(response.status_code)
-if response.status_code == 200:
+if response.status_code == 200: # successful request code
     print(response.json())
 else:
     print(f"Error: {response.status_code}")
