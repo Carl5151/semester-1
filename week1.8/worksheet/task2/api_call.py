@@ -15,6 +15,7 @@ content = response.json()   # JSON data
 
 print(content)
 
+
 # finding likes for post 5
 content = "posts/5"
 
@@ -27,6 +28,7 @@ print(response.status_code)   # HTTP response
 content = response.json()   # JSON data
 
 print(content['reactions']['likes'])
+
 
 # finding products that mention apple
 content = "products/search?q=apple"
@@ -44,6 +46,7 @@ print(content)
 df = pd.DataFrame(content)
 print((df))
 
+
 # finding products that match the word phone
 content = "products/search?q=phone"
 
@@ -59,6 +62,7 @@ print(content)
 # converting to pandas data frame
 df = pd.DataFrame(content)
 print((df))
+
 
 # finding recipes which are snacks
 content = "recipe/meal-type/snack"
