@@ -3,4 +3,8 @@
 
 .tables
 
-.schema table_name
+.schema orders
+
+.schema drivers
+
+.schema menu_items
